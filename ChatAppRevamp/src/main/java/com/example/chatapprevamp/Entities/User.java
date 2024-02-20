@@ -20,6 +20,8 @@ public class User {
     private String username;
     private String email;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private OnlineStatus onlineStatus = OnlineStatus.OFFLINE;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Contact> contacts;
 }
